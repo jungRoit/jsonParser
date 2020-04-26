@@ -1,6 +1,7 @@
 const lexString = require('./stringLexer');
 const lexNumber = require('./numberLexer');
 const lexBool = require('./boolLexer');
+const lexNull = require('./nullLexer');
 const {JSOM_WHITESPACE, TOKENS} = require('../constants/constants');
 const CustomError = require('../errors');
 
@@ -23,10 +24,16 @@ module.exports = lex = string => {
     }
 
     let jsonBool = lexBool(string);
-    console.log('bool',jsonBool, string);
     if(jsonBool) {
       string = string.substr(jsonBool);
       tokens.push(jsonBool === 5? false:true);
+      continue;
+    }
+
+    let jsonNull = lexNull(string);
+    if(jsonNull) {
+      string = string.substr(jsonNull);
+      tokens.push(null);
       continue;
     }
 

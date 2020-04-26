@@ -12,3 +12,6 @@ exports.JSON_FALSE = 'false';
 
 exports.TRUE_LENGTH = 4;
 exports.FALSE_LENGTH = 5;
+
+exports.JSON_NULL = 'null';
+exports.NULL_LENGTH = 4;
