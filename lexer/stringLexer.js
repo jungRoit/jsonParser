@@ -1,17 +1,16 @@
 const {JSON_QUOTE} = require('../constants/constants');
 const CustomError = require('../errors');
 
-exports.lexString = string => {
+module.exports = lexString = string => {
   let jsonString = '';
 
-  if(string[o] === JSON_QUOTE) {
-    string = string.subStr(1);
+  if(string[0] === JSON_QUOTE) {
+    string = string.substr(1);
   }else {
     return null;
   }
   for(let i=0;i<string.length;i++) {
     if(string[i] === JSON_QUOTE) {
-      jsonString +=string[i];
       return jsonString;
     }else {
       jsonString +=string[i];
