@@ -1,7 +1,7 @@
 const JSON_TOKENS = require('./jsonTokens');
 
 exports.JSON_QUOTE = '"';
-exports.JSOM_WHITESPACE = [' ', '\e', '\b', '\r'];
+exports.JSOM_WHITESPACE = [' ', '\t', '\b', '\n', '\r'];
 
 exports.TOKENS = Object.values(JSON_TOKENS);
 

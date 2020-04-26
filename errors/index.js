@@ -4,7 +4,7 @@
 
 class CustomError extends Error {
   constructor(message, details ) {
-    this.message = message;
+    super(message);
     this.details = details;
     Object.setPrototypeOf(this, CustomError.prototype);
   }
